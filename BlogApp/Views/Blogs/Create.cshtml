@@ -1,0 +1,30 @@
+﻿@using BlogApp.Service.Dtos.Blogs;
+@model BlogCreateDto
+@{
+    Layout = "../accounts/_AccountLayout.cshtml";
+}
+<div>
+    <div style="background-color:lightgrey;margin-left:auto;margin-right:auto;margin-top:150px;margin-bottom:auto; width:400px;height:800px;">
+        <form asp-controller="blogs" asp-action="Create" enctype="multipart/form-data" asp-area="" method="post">
+            <h2 class="pt-3 text-center">Post Create</h2>
+            <h4 class="pt-2 mx-2">Title</h4>
+            <div class="mt-1 pt-1">
+                <input type="text" style="margin-left:20px; max-width:350px" asp-for="Title" class="form-control form-text" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <h4 class="pt-4 mx-2">Context</h4>
+            <div class="mt-1 pt-1">
+                <input type="text" style="margin-left:20px; max-width:350px; height:300px" asp-for="Context" class="form-control form-text" />
+                <span asp-validation-for="Context" class="text-danger"></span>
+            </div>
+            <h4 class="pt-4 mx-2">Image</h4>
+            <div class="mt-1 pt-1">
+                <input type="file" style="margin-left:20px; max-width:350px" asp-for="Image" class="form-control form-text" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <input type="submit" class="btn mt-4 me-5 pt-2" style="margin-left:160px;background-color :aqua" />
+           
+        </form>
+
+    </div>
+</div>
